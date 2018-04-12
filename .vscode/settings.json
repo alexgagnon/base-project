@@ -1,13 +1,13 @@
-// {
-//   "css.validate": false,
-//   "eslint.validate": ["javascript", "javascriptreact", "vue", "html"],
-//   "flow.fileExtensions": [".js", ".mjs", ".jsx", ".flow", ".json"],
-//   "flow.useNPMPackagedFlow": true,
-//   "html.format.enable": false,
-//   "javascript.format.enable": false,
-//   "javascript.validate.enable": false,
-//   "less.validate": false,
-//   "prettier.eslintIntegration": true,
-//   "prettier.stylelintIntegration": true,
-//   "scss.validate": false
-// }
+{
+  "css.validate": false,
+  "eslint.validate": ["javascript", "javascriptreact", "vue", "html"],
+  "flow.fileExtensions": [".js", ".mjs", ".jsx", ".flow", ".json"],
+  "flow.useNPMPackagedFlow": true,
+  "html.format.enable": false,
+  "javascript.format.enable": false,
+  "javascript.validate.enable": false,
+  "less.validate": false,
+  "prettier.eslintIntegration": true,
+  "prettier.stylelintIntegration": true,
+  "scss.validate": false
+}
