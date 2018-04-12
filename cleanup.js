@@ -11,6 +11,7 @@ const filesToDelete = ['cleanup.js'];
 const filesToClean = ['README.md'];
 
 let promises = [];
+
 promises = promises.concat(
   dirsToDelete.map(async dirname => {
     await Promise.all(
@@ -20,7 +21,9 @@ promises = promises.concat(
         );
       })
     );
-    return rmdirP(dirname).catch(`Could not delete directory ${dirname}`);
+
+    console.log(fs.readdirSync(dirname));
+    return rmdirP(dirname).catch(() => `Could not delete directory ${dirname}`);
   })
 );
 

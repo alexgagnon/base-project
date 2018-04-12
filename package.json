@@ -12,8 +12,7 @@
     "flow": "flow check",
     "lint": "eslint . && stylelint *.css",
     "postinstall":
-      "commitizen init cz-conventional-changelog && node cleanup.js && npm init",
-    "prepublish": "npm run lint && npm run test",
+      "commitizen init cz-conventional-changelog && npm run lint && flow check &&& node cleanup.js && npm init",
     "start": "node index.js",
     "test:e2e": "",
     "test:unit": "jest",
