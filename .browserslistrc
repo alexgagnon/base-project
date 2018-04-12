@@ -1,0 +1,5 @@
+# Browsers you want to support, used by babel-preset-env and auto-prefixer to include necessary browser polyfills and css rule prefixes
+
+> 1%
+last 2 versions
+IE 10

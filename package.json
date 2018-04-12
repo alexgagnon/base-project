@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "cz": "git-cz",
+    "commit": "git-cz",
     "coverage": "flow coverage",
     "flow": "flow check",
     "lint": "eslint . && stylelint *.css",
@@ -16,7 +16,7 @@
     "prepublish": "npm run lint && npm run test",
     "start": "node index.js",
     "test:e2e": "",
-    "test:unit": "",
+    "test:unit": "jest",
     "test": "npm lint && npm run test:unit && npm run test:e2e"
   },
   "author": "alexgagnon",
@@ -35,9 +35,11 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.3",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.19.1",
@@ -47,7 +49,7 @@
     "eslint-plugin-testcafe": "^0.2.1",
     "eslint-plugin-vue": "^4.4.0",
     "flow-bin": "^0.68.0",
-    "husky": "^0.14.3",
+    "husky": "^1.0.0-rc.1",
     "jest": "^22.4.3",
     "prettier-eslint": "^8.8.1",
     "semantic-release": "^15.1.5",
@@ -57,7 +59,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm lint && npm test:unit"
+      "pre-commit": "npm run lint && npm run test:unit"
     }
   },
   "config": {
