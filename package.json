@@ -1,26 +1,50 @@
 {
   "name": "base",
-  "version": "1.0.0",
+  "version": "1.0.0-semantic-release",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexgagnon/base-project"
+  },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "cz": "git-cz",
+    "coverage": "flow coverage",
+    "flow": "flow check",
     "lint": "eslint . && stylelint *.css",
-    "flow": "flow",
-    "test:unit": "",
+    "postinstall": "commitizen init cz-conventional-changelog && npm init",
+    "prepublish": "npm run lint && npm run test",
+    "start": "node index.js",
     "test:e2e": "",
-    "test": "npm run test:unit && npm run test:e2e",
-    "prepublish": "npm run lint && npm run test"
+    "test:unit": "",
+    "test": "npm lint && npm run test:unit && npm run test:e2e"
   },
   "author": "alexgagnon",
   "license": "MIT",
-  "description": "a starter for projects",
-  "dependencies": {
+  "description": "a starter for JS and HTML projects",
+  "keywords": [
+    "starter",
+    "project",
+    "base",
+    "init",
+    "js",
+    "library",
+    "open source"
+  ],
+  "dependencies": {},
+  "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.19.1",
     "eslint-plugin-html": "^4.0.3",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-testcafe": "^0.2.1",
+    "eslint-plugin-vue": "^4.4.0",
     "flow-bin": "^0.68.0",
     "husky": "^0.14.3",
     "jest": "^22.4.3",
@@ -30,5 +54,14 @@
     "stylelint-config-standard": "^18.2.0",
     "testcafe": "^0.19.1"
   },
-  "devDependencies": {}
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm lint && npm test:unit"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
