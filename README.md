@@ -10,11 +10,9 @@ This is a starter repo for JS and HTML projects to help meet [12 factor](https:/
 * eslint
 * flow
 * husky
-* jest
 * prettier
 * semantic-release
 * stylelint
-* testcafe
 
 It also include some default files to get you started:
 
@@ -26,6 +24,8 @@ It also include some default files to get you started:
 * .gitignore
 * .stylelint
 * some test files to make sure the linters, prettiers, and static type checkers are working properly.
+
+Things like testing frameworks and CI platforms are not included by default so that you can choose your own, but maybe with interest we can add some in the future?
 
 When you use npm install, files specific to this starter will be cleaned up so you can get coding.
 

@@ -1,9 +1,9 @@
-// // @flow
+// @flow
 
-// esLint;
+esLint;
 
-// function checkFlow(a: number, b: string): number {
-//   return a + b;
-// }
+function checkFlow(a: number, b: string): number {
+  return a + b;
+}
 
-// checkFlow('error', 'fine');
+checkFlow('error', 'fine');
