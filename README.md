@@ -25,7 +25,9 @@ It also include some default files to get you started:
 * .flowconfig
 * .gitignore
 * .stylelint
-* some test files to makes sure the linters, prettiers, and static type checkers are working properly.
+* some test files to make sure the linters, prettiers, and static type checkers are working properly.
+
+When you use npm install, files specific to this starter will be cleaned up so you can get coding.
 
 ---
 
