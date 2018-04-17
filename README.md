@@ -26,9 +26,9 @@ It also include some default files to get you started:
 * .stylelint
 * some test files to make sure the linters, prettiers, and static type checkers are working properly.
 
-Things like testing frameworks and CI platforms are not included by default so that you can choose your own, but maybe with interest we can add some in the future?
+Things like testing frameworks and CI platforms are not included by default so that you can choose your own.
 
-NOTE: the Babel presets for flow transforms come from ReactJS packages, so it should be good to go for React projects out of the box. It by default also sets up Babel for Webpacks' tree shaking.
+NOTE: the Babel presets for Flow transforms come from ReactJS packages, so it should be good to go for React projects out of the box. It by default also sets up Babel for Webpacks' tree shaking.
 
 When you use npm install, files specific to this starter will be cleaned up so you can get coding.
 
@@ -43,7 +43,7 @@ It favours:
 
 ---
 
-If you are using vs code, it provides a vs code workspace settings file which you can uncomment to have them work out of the box. The extensions needed are:
+If you are using vs code, it provides a vs code workspace settings file which you can use to have them work out of the box. The extensions needed are:
 
 * ESLint
 * Flow Language Support
