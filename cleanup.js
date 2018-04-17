@@ -32,4 +32,6 @@ promises = promises.concat(
   })
 );
 
-Promise.all(promises).catch(error => console.error(error));
+Promise.all(promises)
+.then(() => console.log('Cleaned up repo'))
+.catch(error => console.error(error));
