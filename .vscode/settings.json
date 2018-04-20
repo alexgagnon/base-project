@@ -9,5 +9,6 @@
   "less.validate": false,
   "prettier.eslintIntegration": true,
   "prettier.stylelintIntegration": true,
-  "scss.validate": false
+  "scss.validate": false,
+  "editor.formatOnSave": true
 }
