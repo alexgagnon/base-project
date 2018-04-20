@@ -53,5 +53,8 @@ promises = promises.concat(
 );
 
 Promise.all(promises)
-.then(() => console.log('Cleaned up repo'))
+.then(() => {
+  console.log('Cleaned up repo.');
+  console.log('Ready to go! Type `npm install` to start');
+})
 .catch(error => console.error(error));

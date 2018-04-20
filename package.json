@@ -12,7 +12,7 @@
     "flow": "flow check",
     "lint": "eslint . && stylelint *.css",
     "postinstall":
-      "commitizen init cz-conventional-changelog && npm run lint && flow check && node cleanup.js && npm init",
+      "commitizen init cz-conventional-changelog && npm run lint && flow check && node cleanup.js",
     "start": "node index.js",
     "test:e2e": "# fill this in",
     "test:unit": "# fill this in",
