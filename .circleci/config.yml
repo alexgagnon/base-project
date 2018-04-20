@@ -24,6 +24,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: 'Install'
+          command: 'npm install'
+      - run:
           name: 'Test'
           command: 'npm run test'
       - store_artifacts:
