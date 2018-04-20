@@ -44,7 +44,7 @@ promises = promises.concat(
 
 promises = promises.concat(
   writeFileP(
-    resolve(__dirname, 'package.test.json'),
+    resolve(__dirname, 'package.json'),
     JSON.stringify(packageFields, null, 2),
     {
       encoding: 'utf8'
