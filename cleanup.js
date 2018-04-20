@@ -1,9 +1,12 @@
 const {promisify} = require('util');
 const fs = require('fs');
-const {unlinkP, truncateP} = {
-  unlinkP: promisify(fs.unlink),
-  truncateP: promisify(fs.truncate)
+const {resolve} = require('path');
+const {truncateP, unlinkP, writeFileP} = {
+  truncateP: promisify(fs.truncate),
+  writeFileP: promisify(fs.writeFile),
+  unlinkP: promisify(fs.unlink)
 };
+const {scripts, devDependencies, husky, config} = require('./package.json');
 
 const filesToDelete = [
   'sample.css',
@@ -11,10 +14,17 @@ const filesToDelete = [
   'sample.test.js',
   'cleanup.js'
 ];
-
 const filesToClean = ['README.md'];
 
 let promises = [];
+
+// clean up the package.json file
+const packageFields = {
+  scripts,
+  devDependencies,
+  husky,
+  config
+};
 
 promises = promises.concat(
   filesToDelete.map(filename => {
@@ -30,6 +40,16 @@ promises = promises.concat(
       console.log(`Could not clean ${filename}`)
     );
   })
+);
+
+promises = promises.concat(
+  writeFileP(
+    resolve(__dirname, 'package.test.json'),
+    JSON.stringify(packageFields, null, 2),
+    {
+      encoding: 'utf8'
+    }
+  )
 );
 
 Promise.all(promises)
