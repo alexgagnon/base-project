@@ -1,5 +1,6 @@
 const {promisify} = require('util');
 const fs = require('fs');
+const rimraf = require('rimraf');
 const {resolve} = require('path');
 const {truncateP, unlinkP, writeFileP} = {
   truncateP: promisify(fs.truncate),
@@ -14,6 +15,7 @@ const filesToDelete = [
   'sample.test.js',
   'cleanup.js'
 ];
+const foldersToDelete = ['.git'];
 const filesToClean = ['README.md'];
 
 let promises = [];
@@ -25,6 +27,19 @@ const packageFields = {
   husky,
   config
 };
+
+delete packageFields.rimraf;
+
+promises = promises.concat(
+  foldersToDelete.map(folder => {
+    return new Promise((resolve, reject) => {
+      if (folder === '/') reject();
+      rimraf(folder, error => {
+        error == null ? resolve() : reject();
+      });
+    }).catch(() => `Could not delete folder ${folder}`);
+  })
+);
 
 promises = promises.concat(
   filesToDelete.map(filename => {
