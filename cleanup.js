@@ -1,3 +1,5 @@
+// @flow
+
 const {promisify} = require('util');
 const fs = require('fs');
 const rimraf = require('rimraf');
@@ -23,7 +25,7 @@ const packageFields = {
   config
 };
 
-delete packageFields.devDepencencies.rimraf;
+delete packageFields.devDependencies.rimraf;
 delete packageFields.scripts.postinstall;
 
 promises = promises.concat(
