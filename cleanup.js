@@ -9,13 +9,8 @@ const {truncateP, unlinkP, writeFileP} = {
 };
 const {scripts, devDependencies, husky, config} = require('./package.json');
 
-const filesToDelete = [
-  'sample.css',
-  'sample.js',
-  'sample.test.js',
-  'cleanup.js'
-];
-const foldersToDelete = ['.git'];
+const filesToDelete = ['sample.css', 'sample.js', 'cleanup.js'];
+const foldersToDelete = ['.git', '.circleci'];
 const filesToClean = ['README.md'];
 
 let promises = [];
@@ -28,7 +23,8 @@ const packageFields = {
   config
 };
 
-delete packageFields.rimraf;
+delete packageFields.devDepencencies.rimraf;
+delete packageFields.scripts.postinstall;
 
 promises = promises.concat(
   foldersToDelete.map(folder => {
@@ -70,6 +66,6 @@ promises = promises.concat(
 Promise.all(promises)
 .then(() => {
   console.log('Cleaned up repo.');
-  console.log('Ready to go! Type `npm install` to start');
+  console.log('Ready to go!');
 })
 .catch(error => console.error(error));
