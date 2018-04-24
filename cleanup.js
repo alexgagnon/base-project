@@ -35,7 +35,7 @@ promises = promises.concat(
       rimraf(folder, error => {
         error == null ? resolve() : reject();
       });
-    }).catch(() => `Could not delete folder ${folder}`);
+    }).catch(() => console.log(`Could not delete folder ${folder}`));
   })
 );
 
@@ -62,7 +62,7 @@ promises = promises.concat(
     {
       encoding: 'utf8'
     }
-  )
+  ).catch(() => console.log('Could not write package.json file'))
 );
 
 Promise.all(promises)
