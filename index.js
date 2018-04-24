@@ -1,1 +1,1 @@
-// Write some code!
+// @flow
