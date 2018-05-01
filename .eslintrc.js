@@ -6,12 +6,12 @@ module.exports = {
     node: true,
     jest: true
   },
-  extends: ['eslint:recommended', 'plugin:testcafe/recommended'],
+  extends: ['eslint:recommended'],
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module'
   },
-  plugins: ['html', 'jsx-a11y', 'react', 'testcafe', 'vue'],
+  plugins: ['html', 'flowtype'],
   rules: {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-unused-vars': process.env.NODE_ENV === 'production' ? 'error' : 'warn',

@@ -1,8 +1,8 @@
 {
-  "presets": [["env", {"modules": false, "useBuiltIns": true}], "react"],
+  "presets": [["env", {"modules": false, "useBuiltIns": true}], "flow"],
   "env": {
     "test": {
-      "presets": [["env"], "react"]
+      "presets": [["env"], "flow"]
     }
   }
 }
